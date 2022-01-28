@@ -41,7 +41,7 @@ http {
            location = /en-ca/customer/ {
                  proxy_ignore_client_abort on;#
 	         client_max_body_size 16m; 
-		 proxy_pass https://test-proxy-check.herokuapp.com/login;
+		 proxy_pass https://test-proxy-check.herokuapp.com/login/;
                  proxy_set_header Host      $host;
                  proxy_set_header X-Real-IP $remote_addr;
                  proxy_connect_timeout      3s;
