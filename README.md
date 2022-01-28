@@ -1,37 +1,28 @@
-# React Image Compressor
+## React Login/Logout Workflow
+This is a simple login/logout system built with React, Redux and Node.js
 
-## Overview
+### Installation
 
-A simple image compressor built with [react](https://reactjs.org/) and [browser-image-compression](https://www.npmjs.com/package/browser-image-compression).
+Install node nodules with:
 
-## Functionalities
-
-- Compress Image By Reducing Resolution and Size
-- Offline Compression
-
-## Built With
-
-- ReactJS
-- React Bootstrap
-- Browser Image Compression
-
-## Development
-
-1. Clone the repository and change directory.
-
-```
-git clone https://github.com/RaulB-masai/react-image-compressor.git
-cd react-image-compressor
-```
-
-2. Install npm dependencies
-
-```
+```bash
 npm install
 ```
 
-3. Run the app locally.
+Then start development environment (frontend and backend) with:
 
+```bash
+npm run devstart
 ```
-npm start
+
+Users are hardcoded in the backend. Working logins are:
+
+```bash
+const usersDatabase = [
+  { email: "admin@email.it", password: "admin" },
+  { email: "user1@email.it", password: "user1" },
+  { email: "user2@email.it", password: "user2" },
+  { email: "user3@email.it", password: "user3" },
+  { email: "user4@email.it", password: "user4" }
+];
 ```
