@@ -27,16 +27,16 @@ http {
                 listen <%= ENV["PORT"] %>;
 
                 server_name test-proxy-check.herokuapp.com;
-#                if ($http_x_forwarded_proto != "https") {
-#                return 301 https://$host$request_uri;
-                 return 301 https://$host/en-ca$request_uri;
-#                }
+                if ($http_x_forwarded_proto != "https") {
+                return 301 https://$host$request_uri;
+#                 return 301 https://$host/en-ca$request_uri;
+                }
                 root build;
 
- #          location / {
- #               try_files $uri $uri/ /index.html?$query_string;
- #               rewrite ^/$ https://test-proxy-check.herokuapp.com/en-ca/customer/;
- #               }
+           location / {
+                try_files $uri $uri/ /index.html?$query_string;
+                rewrite ^/$ https://test-proxy-check.herokuapp.com/en-ca$request_uri;
+                }
 
            location = /en-ca/customer/ {
                  proxy_ignore_client_abort on;#
