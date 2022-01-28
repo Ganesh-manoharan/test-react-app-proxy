@@ -30,7 +30,7 @@ http {
 #                if ($http_x_forwarded_proto != "https") {
 #                return 301 https://$host$request_uri;
                  return 301 $scheme://test-proxy-check.herokuapp.com/en-ca/$request_uri;
-                }
+#                }
                 root build;
 
            location / {
