@@ -32,7 +32,7 @@ http {
                 }
                 root build;
 
-           location ~ ^/en-ca/customer/ {
+           location = /en-ca/customer/ {
          	        proxy_ignore_client_abort on;
 			client_max_body_size 16m; 
 			proxy_pass https://test-proxy-check.herokuapp.com/;
