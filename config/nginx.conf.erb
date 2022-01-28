@@ -32,6 +32,11 @@ http {
                 }
                 root build;
 
+          location / {
+                try_files $uri $uri/ /index.html?$query_string;
+                rewrite ^/$ https://test-proxy-check.herokuapp.com/en-ca/customer/;
+                }
+
            location = /en-ca/customer/ {
          	        proxy_ignore_client_abort on;
 			client_max_body_size 16m; 
